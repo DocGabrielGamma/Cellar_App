@@ -2,21 +2,21 @@ import React from 'react';
 import PropTypes from "prop-types";
 import Link from '@material-ui/core/Link';
 
-const CellardCard = ({wine}) => (
+const DetailsCard = ({wine}) => (
   <>
     <div> {wine.name} </div>
     <div> {wine.vineyard} </div>
     <div> {wine.year} </div>
-    <Link href={`/${wine.id}`} variant="body2">
-        Details
+    <Link href={`/list`} variant="body2">
+        Return
     </Link>
   </>
 )
 
-CellardCard.propTypes = {
+DetailsCard.propTypes = {
    classes: PropTypes.object.isRequired,
    wine: PropTypes.shape({
-        id: PropTypes.number,
+        id: PropTypes.string,
         name: PropTypes.string,
         vineyard: PropTypes.string,
         year: PropTypes.string,
@@ -25,4 +25,4 @@ CellardCard.propTypes = {
    }).isRequired
 }
 
-export default CellardCard;
+export default DetailsCard;

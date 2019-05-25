@@ -1,5 +1,28 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
+import Typography from "@material-ui/core/Typography";
+import PropTypes from "prop-types";
+import DetailsCard from "../DetailsCard";
 
-const DetailsView = () => <div> detailsView </div>
+const DetailsView = ({wines, classes, match}) => {
+    const { id } = match.params;
+    const wine = wines.find(wine => {
+     return wine.id === id;
+    });
+    return (
+      <DetailsCard wine={wine} />
+    );
+};
 
-export default DetailsView;
+const mapsStateToProps = state => {
+  return {
+    wines: state.wines
+  };
+};
+
+DetailsView.propTypes = {
+  classes: PropTypes.object.isRequired,
+  wines: PropTypes.array.isRequired
+};
+
+export default connect(mapsStateToProps)(DetailsView);

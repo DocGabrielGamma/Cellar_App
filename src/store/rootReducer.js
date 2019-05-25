@@ -4,7 +4,7 @@ const initialState = {
   selectedWineId: "1",
   wines: [
     {
-     id: 1,
+     id: "1",
      name: "Super fancy wine",
      vineyard: "FancyLand",
      year: "1990",
@@ -12,7 +12,7 @@ const initialState = {
      comments: ""
     },
     {
-      id: 2,
+      id: "2",
       name: "Tas-y wine",
       vineyard: "Republic of Y",
       year: "1500",
@@ -20,7 +20,7 @@ const initialState = {
       comments: ""
      },
      {
-      id: 4,
+      id: "4",
       name: "Yummy",
       vineyard: "i can't believe this is a vineyard",
       year: "1990",
@@ -28,7 +28,7 @@ const initialState = {
       comments: ""
      },
      {
-      id: 5,
+      id: "5",
       name: "The one wine",
       vineyard: "Middle-earth",
       year: "250",
