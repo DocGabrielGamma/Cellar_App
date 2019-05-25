@@ -1,1 +1,1 @@
-export { default } from "./store.js";
+export { store, persistor } from "./store.js";
