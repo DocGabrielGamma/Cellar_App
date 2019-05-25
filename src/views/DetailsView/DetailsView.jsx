@@ -9,6 +9,7 @@ const DetailsView = ({wines, classes, match}) => {
     const wine = wines.find(wine => {
      return wine.id === id;
     });
+    debugger;
     return (
       <DetailsCard wine={wine} />
     );

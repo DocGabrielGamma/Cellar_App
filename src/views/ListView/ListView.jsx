@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import CellardCard from "../../components/CellarCard";
 
 const List = ({wines, classes}) => {
+    debugger;
     return wines.map((wine, key) => {
       return (
         <div key={wine.id}>
