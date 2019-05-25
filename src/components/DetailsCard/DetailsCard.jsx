@@ -1,42 +1,47 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "@material-ui/core/Link";
-
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
-const CellardCard = ({ wine, classes }) => (
+const DetailsCard = ({ wine, classes }) => (
   <>
     <Card className={classes.card}>
       <CardMedia
         className={classes.media}
-        image="http://lorempixel.com/100/100/food/"
+        image="http://lorempixel.com/800/600/food/"
         title="Contemplative Reptile"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          {wine.name}
+          {`Name: ${wine.name}`}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          {wine.vineyard}
+          {`Vineyard: ${wine.year}`}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          {wine.year}
+          {`Made in: ${wine.year}`}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {`Rating: ${wine.rating}/5`}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {`Comments: ${wine.comments}`}
         </Typography>
       </CardContent>
       <CardActions>
-        <Link href={`/${wine.id}`} variant="body2">
-          Details
+        <Link href={`/list`} variant="body2">
+          Return
         </Link>
       </CardActions>
     </Card>
   </>
 );
 
-CellardCard.propTypes = {
+DetailsCard.propTypes = {
   classes: PropTypes.object.isRequired,
   wine: PropTypes.shape({
     id: PropTypes.string,
@@ -48,4 +53,4 @@ CellardCard.propTypes = {
   }).isRequired
 };
 
-export default CellardCard;
+export default DetailsCard;

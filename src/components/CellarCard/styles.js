@@ -1,25 +1,13 @@
 const styles = theme => {
   return {
-    root: {
-      margin: "1em 1em 1.5em 1em",
-      display: "flex",
-      flexDirection: "column",
-      textAlign: "left",
+    card: {
+      width: 345,
+      margin: "10px",
+      boxShadow: "10px 10px 5px 0px rgba(0,0,0,0.75)"
     },
-    educationsTitle: {
-      float: "left",
-      textTransform: "uppercase",
-      color: theme.palette.primary.light,
-      margin: "0.5em 0.5em 1em 0em",
-      width: "100%",
-      textAlign: "left",
+    media: {
+      height: 140,
     },
-    degree: {
-      fontWeight: 500
-    },
-    body1: {
-      fontSize: "0.7em"
-    }
   };
 };
 

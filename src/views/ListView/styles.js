@@ -4,7 +4,7 @@ const styles = theme => {
       margin: "1em 1em 1.5em 1em",
       display: "flex",
       flexDirection: "column",
-      textAlign: "left",
+      textAlign: "left"
     },
     educationsTitle: {
       float: "left",
@@ -12,7 +12,7 @@ const styles = theme => {
       color: theme.palette.primary.light,
       margin: "0.5em 0.5em 1em 0em",
       width: "100%",
-      textAlign: "left",
+      textAlign: "left"
     },
     degree: {
       fontWeight: 500

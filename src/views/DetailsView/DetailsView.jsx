@@ -1,18 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
-import Typography from "@material-ui/core/Typography";
 import PropTypes from "prop-types";
 import DetailsCard from "../../components/DetailsCard";
 
-const DetailsView = ({wines, classes, match}) => {
-    const { id } = match.params;
-    const wine = wines.find(wine => {
-     return wine.id === id;
-    });
-    debugger;
-    return (
+const DetailsView = ({ wines, classes, match }) => {
+  const { id } = match.params;
+  const wine = wines.find(wine => {
+    return wine.id === id;
+  });
+  return (
+    <div className={classes.root}>
       <DetailsCard wine={wine} />
-    );
+    </div>
+  );
 };
 
 const mapsStateToProps = state => {

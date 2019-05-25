@@ -6,7 +6,6 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 
 const Content = ({ classes, wines, onAddNewWine }) => {
-  
   const [values, setValues] = React.useState({
     id: "00",
     name: "Super fancy wine",
@@ -20,17 +19,22 @@ const Content = ({ classes, wines, onAddNewWine }) => {
     setValues({ ...values, [name]: event.target.value });
   };
 
-  const createID = function () {
+  const createID = function() {
     // This ID is unique so no need to check if existence
     //External code
     // Math.random should be unique because of its seeding algorithm.
     // Convert it to base 36 (numbers + letters), and grab the first 9 characters
     // after the decimal.
-    return '_' + Math.random().toString(36).substr(2, 9);
+    return (
+      "_" +
+      Math.random()
+        .toString(36)
+        .substr(2, 9)
+    );
   };
-  
+
   const getUniqueWine = () => {
-    return {...values, id: createID()}
+    return { ...values, id: createID() };
   };
 
   const addWine = () => {
@@ -41,16 +45,16 @@ const Content = ({ classes, wines, onAddNewWine }) => {
     <>
       <div className={classes.paper}>
         <Typography variant="h2">Add new wine</Typography>
-        <form className={classes.container} noValidate >
-            <TextField
-              id="standard-name"
-              label="Name"
-              value={values.name}
-              className={classes.textField}
-              onChange={handleChange("name")}
-              margin="normal"
-            />
-            <TextField
+        <form className={classes.container} noValidate>
+          <TextField
+            id="standard-name"
+            label="Name"
+            value={values.name}
+            className={classes.textField}
+            onChange={handleChange("name")}
+            margin="normal"
+          />
+          <TextField
             id="standard-vineyard"
             label="vineyard"
             value={values.vineyard}
@@ -64,6 +68,7 @@ const Content = ({ classes, wines, onAddNewWine }) => {
             value={values.year}
             onChange={handleChange("year")}
             className={classes.textField}
+            type="number"
             margin="normal"
           />
           <TextField
@@ -71,6 +76,7 @@ const Content = ({ classes, wines, onAddNewWine }) => {
             label="rating"
             value={values.rating}
             onChange={handleChange("rating")}
+            type="number"
             className={classes.textField}
             margin="normal"
           />
@@ -82,7 +88,7 @@ const Content = ({ classes, wines, onAddNewWine }) => {
             onChange={handleChange("comments")}
             margin="normal"
           />
-      </form>
+        </form>
         <Button variant="contained" color="primary" onClick={addWine}>
           Add
         </Button>
@@ -98,7 +104,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 Content.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default connect(

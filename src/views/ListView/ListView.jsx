@@ -1,18 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
-import Typography from "@material-ui/core/Typography";
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
 import Prompt from "../../components/Prompt";
 import PropTypes from "prop-types";
 import CellardCard from "../../components/CellarCard";
 
 const List = ({wines, classes}) => {
     debugger;
-    return wines.map((wine, key) => {
+    return wines.map((wine, index) => {
       return (
-        <div key={wine.id}>
-          <Typography className={classes.degree} variant="body1">{wine.id}</Typography>
+        <GridListTile key={wine.id}>
           <CellardCard  wine={wine} />
-        </div>
+        </GridListTile>
       );
     });
 };
@@ -20,8 +20,10 @@ const List = ({wines, classes}) => {
 const ListView = ({wines, classes}) => {
     return (
       <>
-        <List wines={wines} classes={classes} />
         <Prompt  wines={wines} />
+        <GridList cellHeight={160} className={classes.gridList} >
+          <List wines={wines} classes={classes} />
+        </GridList>
       </>
     )
 };
