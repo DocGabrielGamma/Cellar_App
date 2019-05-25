@@ -16,7 +16,7 @@ const CellardCard = ({wine}) => (
 CellardCard.propTypes = {
    classes: PropTypes.object.isRequired,
    wine: PropTypes.shape({
-        id: PropTypes.number,
+        id: PropTypes.string,
         name: PropTypes.string,
         vineyard: PropTypes.string,
         year: PropTypes.string,

@@ -3,8 +3,8 @@ import './App.css';
 import store from "./store";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-import Details from "./DetailsView";
-import List from "./ListView";
+import Details from "./views/DetailsView";
+import List from "./views/ListView";
 
 function App() {
   return (

@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import Typography from "@material-ui/core/Typography";
+import Prompt from "../../components/Prompt";
 import PropTypes from "prop-types";
-import CellardCard from "../CellarCard";
+import CellardCard from "../../components/CellarCard";
 
-const ListView = ({wines, classes}) => {
-    debugger;
+const List = ({wines, classes}) => {
     return wines.map((wine, key) => {
       return (
         <div key={wine.id}>
@@ -14,6 +14,15 @@ const ListView = ({wines, classes}) => {
         </div>
       );
     });
+};
+
+const ListView = ({wines, classes}) => {
+    return (
+      <>
+        <List wines={wines} classes={classes} />
+        <Prompt  wines={wines} />
+      </>
+    )
 };
 
 const mapsStateToProps = state => {

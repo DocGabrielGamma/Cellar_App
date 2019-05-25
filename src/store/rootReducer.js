@@ -1,7 +1,4 @@
 const initialState = {
-  sortingType: "name",
-  currentView: "list",
-  selectedWineId: "1",
   wines: [
     {
      id: "1",
@@ -36,10 +33,17 @@ const initialState = {
       comments: "A wine to rule them all"
      }
   ]
-
 };
 
 const reducer = (state = initialState, action) => {
+  if(action.type === 'ADD') {
+    return {
+      wines: [
+        ...state.wines,
+        action.wine
+      ]
+    }
+  }
   return state;
 };
 
